@@ -1,4 +1,8 @@
 import json
+from url import get_route
+from api.view import InmuebleView
+
+url = get_route()
 
 
 def application(environ, start_response):
@@ -9,6 +13,11 @@ def application(environ, start_response):
     headers = [("Content-type", "application/json")]
 
     start_response(http_status, headers)
+
+    if environ["PATH_INFO"] == url:
+        view = InmuebleView()
+        data = view.get()
+        print("APi....", data)
 
     # respuesta
     response = {"message": "Property Micro - API Rest"}
