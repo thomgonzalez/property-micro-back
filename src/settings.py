@@ -1,14 +1,11 @@
 # -*- coding: utf-8 -*-
 import os
+import os
+from dotenv import load_dotenv
+from pathlib import Path
 
-API_TITLE = os.getenv("API_TITLE", "Default API Title")
-API_VERSION = "v1"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+path_env = os.path.join(BASE_DIR, ".env")
 
-DB_USER = os.getenv("DB_USER")
-DB_PASSWORD = os.getenv("DB_PASSWORD")
-DB_SERVER = os.getenv("DB_SERVER")
-DB_PORT = os.getenv("DB_PORT")
-DB_DATABASE = os.getenv("DB_DATABASE")
-
-SQLALCHEMY_DATABASE_URI = f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_SERVER}:{int(DB_PORT)}/{DB_DATABASE}"
-print(SQLALCHEMY_DATABASE_URI)
+dotenv_path = Path(path_env)
+load_dotenv(dotenv_path=dotenv_path)
