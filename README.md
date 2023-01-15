@@ -15,6 +15,7 @@ Tecnologías
 [x] JSON - Para intercambio de datos.
 [x] WSGI - Servidor Web.
 [x] SQLAlchemy - Conexión a la base de datos.
+[x] MYSQL - Librería para conexión a la base de datos.
 
 Lenguajes
 ----------------------------
@@ -25,6 +26,7 @@ Instalación de dependencias
 ----------------------------
 ```
   sudo apt update
+  apt-get install build-essential python-dev
   pip install pyodbc
   pip install SQLAlchemy
 
