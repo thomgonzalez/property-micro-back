@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from sqlalchemy import create_engine
-from config import SQLALCHEMY_DATABASE_URI
+from db.config import SQLALCHEMY_DATABASE_URI
 
 
 class DataBase(object):
@@ -13,11 +13,11 @@ class DataBase(object):
         Utilizaremos la función create_engine() para encender el motor MySQL
         """
         self.engine = create_engine(SQLALCHEMY_DATABASE_URI)
+        self._cnn = self.engine.connect()
 
     def execute(self, query):
         """
         Creamos el objeto conexión
         """
-        self._cnn = self.engine.connect()
         rs = self._cnn.execute(query)
         return rs
