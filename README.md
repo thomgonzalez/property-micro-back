@@ -25,9 +25,10 @@ Lenguajes
 
 Servicio de “Me gusta”
 ----------------------------
-1. El diagra de Entidad-Relación se encuentra en el proyecto dentro de la ruta src/doc/sql.
-2. El codifo SQL de las tablas se encuentra en el proyecto dentro de la ruta src/doc/sql.
+1. El diagrama de Entidad-Relación se encuentra en el proyecto dentro de la ruta doc/images.
+2. El código SQL de las tablas se encuentra en el proyecto dentro de la ruta doc/sql.
 
+![alt picture](https://github.com/thomgonzalez/property-micro-back/blob/tsantiago/doc/images/ER.png)
 
 Instalar y usar virtualenv
 --------------------------
