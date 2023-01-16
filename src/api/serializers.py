@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class InmuebleSerializer(object):
     """
     Clase base para serializar datos
