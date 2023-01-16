@@ -18,6 +18,7 @@ class InmuebleSerializer(object):
                     "id": row.id,
                     "address": row.address,
                     "city": row.city,
+                    "year": row.year,
                     "price": row.price,
                     "status": row.name,
                     "description": row.description,
