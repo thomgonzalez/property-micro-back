@@ -14,7 +14,7 @@ class InmuebleView(object):
         Método obtiene lista de propiedades
         """
         # Obtener datos en objectos
-        result = get_data()
+        result = get_data(**kwargs)
         # Serialización de datos
         serializer = InmuebleSerializer(data=result)
         data = serializer.data
