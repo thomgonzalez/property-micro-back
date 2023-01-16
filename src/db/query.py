@@ -1,4 +1,10 @@
+# -*- coding: utf-8 -*-
+from db.config import get_database_url
 from db.engine import DataBase
+from settings import set_env
+
+set_env()
+db_url = get_database_url()
 
 
 def parse_params(data):
@@ -67,6 +73,6 @@ def get_data(**kwargs):
                 AND st.name IN ('pre_venta', 'en_venta', 'vendido')
     """
     sql_raw += query_filter
-    db = DataBase()
+    db = DataBase(db_url)
     rs = db.execute(sql_raw)
     return rs
