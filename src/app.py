@@ -1,7 +1,6 @@
-import json
 from url import get_route
 from api.view import InmuebleView
-from utils.common import to_json, to_encode
+from utils.common import to_json, to_encode, get_query_params
 
 url = get_route()
 
@@ -31,6 +30,7 @@ def application(environ, start_response):
     http_status = "200 OK"
     headers = [("Content-type", "application/json")]
     PATH_INFO = environ["PATH_INFO"]
+    QUERY_STRING = environ["QUERY_STRING"]
 
     start_response(http_status, headers)
 
@@ -38,8 +38,9 @@ def application(environ, start_response):
         return default_reponse()
 
     if PATH_INFO == url:
+        params = get_query_params(QUERY_STRING)
         view = InmuebleView()
-        response = view.get()
+        response = view.get(**params)
         # Response del Api
         return [response]
 

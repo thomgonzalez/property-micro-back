@@ -5,10 +5,12 @@ from pathlib import Path
 
 from settings import PATH_ENV
 
+
 def set_env():
-    #print("set_env---",PATH_ENV)
+    # print("set_env---",PATH_ENV)
     dotenv_path = Path(PATH_ENV)
     load_dotenv(dotenv_path=dotenv_path)
+
 
 set_env()
 
