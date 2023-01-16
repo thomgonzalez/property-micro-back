@@ -52,13 +52,15 @@ def get_data(**kwargs):
     Método forma SQL para ejecutar por SQLAlchemy nativo con conexion a la base de datos MySQL.
     """
     query_filter = filters(kwargs)
-    sql_raw = """SELECT pr.id, pr.description, st.name, st.label, sh.update_date 
+    sql_raw = """SELECT pr.id, pr.address, pr.city, pr.price, pr.description, st.name, sh.id, sh.update_date 
         FROM status_history sh
         INNER JOIN property pr
             ON pr.id = sh.property_id 
         INNER  JOIN status st
             ON st.id = sh.status_id
-        WHERE st.name IN ('pre_venta', 'en_venta', 'vendido')
+        WHERE pr.id = (SELECT property_id FROM status_history WHERE property_id=pr.id ORDER BY id DESC LIMIT 1)
+            AND pr.price <> 0  
+            AND st.name IN ('pre_venta', 'en_venta', 'vendido')
     """
     sql_raw += query_filter
     db = DataBase()
