@@ -1,4 +1,4 @@
-import json
+# -*- coding: utf-8 -*-
 from db.query import get_data
 from api.serializers import InmuebleSerializer
 from utils.common import to_encode, to_json

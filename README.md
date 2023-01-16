@@ -74,6 +74,12 @@ http://localhost:8000/api/inmuebles/
 http://localhost:8000/api/inmuebles/?year=2020&city=bogota&status=pre_venta
 ```
 
+Test
+-------
+```python
+$ python -m unittest
+```
+
 Dudas
 ----------------------------
 1.- ¿Conexión a la base de datos, que librería usar? 

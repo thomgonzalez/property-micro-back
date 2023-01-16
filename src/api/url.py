@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from .view import InmuebleView
 
 app_name = "api"
