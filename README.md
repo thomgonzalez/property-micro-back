@@ -49,18 +49,22 @@ Environment Variables
 Cree un archivo "db.env" en la raíz del proyecto para definir las variables de entorno a la base de datos.
 
 ```
+# .db.env
 DB_SERVER=localhost
 DB_USER=user
 DB_PASSWORD=pass
 DB_DATABASE=db
 DB_PORT=port
-
 ```
 
 Levantar servidor web
 -------
 ```python
-$ python src/run.py
+# con virtualenv
+$ python -m src.run
+# Correr con Docker
+$ make build
+$ make run
 ```
 
 Endpoint del microservicio
@@ -97,5 +101,4 @@ En mi propuesta no la maneje porque dentro de la tabla de property abrir una lla
 En el diagrama ER la tabla extendida es la de rating el cual está relacionado con la tabla de usuarios, 
 y la tabla de property. Cuando un usuario le dé me gusta una propiedad se quede registrado en la tabla de rating en el campo "score" se puede manejar con un 0=No me gusta ó 1=Me gusta, en el caso de que se quiera manejar con la votación por puntaje de 5 estrellas lo soportaría sin problemas por eso no lo deje como un campo booleano. 
 
-Igual cuenta con un campo "message" para escribir un mensaje a la propiedad como recomendación. Además, tiene un campo fecha de creación del registro en "created". 
-
+Igual cuenta con un campo "message" para escribir un mensaje a la propiedad como recomendación. Además, tiene un campo fecha de creación del registro en "created".
