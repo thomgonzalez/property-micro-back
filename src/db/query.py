@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from db.config import get_database_url
-from db.engine import DataBase
-from settings import set_env
+from src.db.config import get_database_url
+from src.db.engine import DataBase
+from src.settings import set_env
 
 set_env()
 db_url = get_database_url()

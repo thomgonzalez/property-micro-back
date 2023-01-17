@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from api.url import app_name, urlpatterns
+from src.api.url import app_name, urlpatterns
 
 BASE_API_URL = f"/{app_name}/"
 

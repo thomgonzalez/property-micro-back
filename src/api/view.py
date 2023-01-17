@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from db.query import get_data
-from api.serializers import InmuebleSerializer
-from utils.common import to_encode, to_json
+from src.db.query import get_data
+from src.api.serializers import InmuebleSerializer
+from src.utils.common import to_encode, to_json
 
 
 class InmuebleView(object):

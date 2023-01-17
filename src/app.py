@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from url import get_route
-from api.view import InmuebleView
-from utils.common import to_json, to_encode, get_query_params
+from src.url import get_route
+from src.api.view import InmuebleView
+from src.utils.common import to_json, to_encode, get_query_params
 
 
 url = get_route()

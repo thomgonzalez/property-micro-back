@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from .view import InmuebleView
+from src.api.view import InmuebleView
 
 app_name = "api"
 
